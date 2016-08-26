@@ -1,12 +1,12 @@
 // BUSINESS LOGIC
-// function PizzaOrder(name, phone, size) {
-//   this.name = name;
-//   this.phone = phone;
-//   this.size = size;
-//   this.toppings = [];
-//   this.pizzaPrice = 0;
-//   this.totalPrice = 0;
-// };
+function PizzaOrder(name, phone, size) {
+  this.name = name;
+  this.phone = phone;
+  this.size = size;
+  this.toppings = [];
+  this.pizzaPrice = 0;
+  this.totalPrice = 0;
+};
 
 function Pizza(size) {
   this.size = size;
