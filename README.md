@@ -7,19 +7,21 @@
 ## Description
 _This is a web page where a user can choose one or more individual toppings (pepperoni, chicken, olives, etc) and a size to order a pizza and see the final cost._
 
-* _Blah._
-    * _Example Input: Blah_
-    * _Example Output: Blah_
-* _Blah_
-    * _Example Input: Blah_
-    * _Example Output: [Blah]_
-* _Blah_
-    * _Example Input: Blah_
-    * _Example Output: Blah_
-
-The final output after submitting the order:
-* _Example Input: Blah_
-* _Example Output: Blah_
+* _Pizzas sizes have a set value._
+    * _Example Input: Small_
+    * _Example Output: 10_
+* _Pizza toppings have a set value._
+    * _Example Input: Pepperoni_
+    * _Example Output: 1_
+* _Pizza toppings have a set value depending on size of pizza._
+    * _Example Input: Medium, Pepperoni_
+    * _Example Output: 1.50_
+* _Total topping cost add up depending number of toppings and size of pizza._
+    * _Example Input: Medium, Pepperoni, Olives_
+    * _Example Output: 3.00_
+* _The final output after submitting the order calculates total cost of toppings and price of size of pizze_
+    * _Example Input: Medium, Pepperoni_
+    * _Example Output: 16.50_
 
 ## Setup/Installation Requirements
 * _Clone this repository to your desktop_
