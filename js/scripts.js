@@ -27,6 +27,12 @@ Pizza.prototype.calculatePizzaPrice = function() {
   return this.pizzaPrice = (numberOfToppings * (this.size/10)) + this.size;
 };
 
+Pizza.prototype.calculateOrder = function() {
+  var total = 0;
+
+  return this.pizzaPrice = (numberOfToppings * (this.size/10)) + this.size;
+};
+
 Pizza.prototype.listToppings = function() {
   var toppings = "";
   if (this.toppings[1] !== undefined){
@@ -49,6 +55,7 @@ Pizza.prototype.listToppings = function() {
 
 // USER INTERFACE LOGIC
 $(function() {
+   var total = 0;
    $("form").submit(function(event) {
      event.preventDefault();
 
@@ -65,12 +72,13 @@ $(function() {
       });
 
       alert("Pizza price: $" + newPizza.calculatePizzaPrice());
+      total+=newPizza.calculatePizzaPrice();
 
       $(".customersName").text(newCustomerInfo.name);
       $("#orderList").append("<li>" + newPizza.pizzaSizeToString() + ": " + newPizza.listToppings() + " : $"+ newPizza.pizzaPrice +  "</li>");
       $("#orderList").show();
-
-      alert(newPizza.size);
-
-  });
+   });
+   $("#placeOrder").click(function(){
+    confirm("Your total is: $" + total);
+   });
 });
