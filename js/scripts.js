@@ -1,34 +1,35 @@
 // BUSINESS LOGIC
-function PizzaOrder(name, phone, size) {
-  this.name = name;
-  this.phone = phone;
-  this.size = size;
-  this.toppings = [];
-  this.pizzaPrice = 0;
-  this.totalPrice = 0;
-};
-
-// function Pizza(size) {
+// function PizzaOrder(name, phone, size) {
+//   this.name = name;
+//   this.phone = phone;
 //   this.size = size;
 //   this.toppings = [];
 //   this.pizzaPrice = 0;
+//   this.totalPrice = 0;
 // };
-//
-// PizzaOrder.prototype.calculatePizzaPrice = function() {
+
+function Pizza(size) {
+  this.size = size;
+  this.toppings = [];
+  this.pizzaPrice = 0;
+};
+
+Pizza.prototype.calculatePizzaPrice = function() {
+  var numberOfToppings = this.toppings.length;
+  return this.pizzaPrice = (numberOfToppings * (this.size/10)) + this.size;
+};
+
+
+
+// PizzaOrder.prototype.calculatePrice = function() {
 //   var numberOfToppings = this.toppings.length;
 //   return this.totalPrice = (numberOfToppings * (this.size/10)) + this.size;
 // };
 
 
-PizzaOrder.prototype.calculatePrice = function() {
-  var numberOfToppings = this.toppings.length;
-  return this.totalPrice = (numberOfToppings * (this.size/10)) + this.size;
-};
 
-
-
-  // USER INTERFACE LOGIC
-  $(function() {
+// USER INTERFACE LOGIC
+$(function() {
    $("form").submit(function(event) {
    event.preventDefault();
 
@@ -45,5 +46,5 @@ PizzaOrder.prototype.calculatePrice = function() {
 
     alert(newPizzaOrder.calculatePrice());
 
-    });
   });
+});
