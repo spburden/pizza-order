@@ -6,12 +6,16 @@ function Pizza() {
   this.totalPrice = 0;
 };
 
-Pizza.prototype.calculateNumberofToppings = function () {
-  this.numberOfToppings = this.typesOfToppings.length;
+Pizza.prototype.insertTypeOfTopping = function (topping) {
+  this.typesOfToppings.push(topping);
 };
 
 Pizza.prototype.calculateNumberofToppings = function () {
-  this.numberOfToppings = this.typesOfToppings.length;
+  return this.numberOfToppings = this.typesOfToppings.length;
+};
+
+Pizza.prototype.calculatePrice = function (priceOfSize) {
+  return this.totalPrice = (this.numberOfToppings * (priceOfSize/10)) + priceOfSize;
 };
 
 
