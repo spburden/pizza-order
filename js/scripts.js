@@ -1,30 +1,53 @@
+// Pizza.prototype.calculateNumberofToppings = function () {
+//   return this.numberOfToppings = this.toppings.length;
+// };
+//
+// Pizza.prototype.calculatePrice = function () {
+//   return this.totalPrice = (this.numberOfToppings * (this.size/10)) + this.size;
+// };
+
 // BUSINESS LOGIC
-function Pizza() {
-  this.size = "";
-  this.typesOfToppings = [];
-  this.numberOfToppings = 0;
+function PizzaOrder(name, phone, size) {
+  this.name = name;
+  this.phone = phone;
+  this.size = size;
+  this.toppings = [];
+  //this.numberOfToppings = 0;
   this.totalPrice = 0;
 };
 
-Pizza.prototype.insertTypeOfTopping = function (topping) {
-  this.typesOfToppings.push(topping);
+// PizzaOrder.prototype.insertTypeOfTopping = function(topping) {
+//   this.toppings.push(topping);
+// };
+
+PizzaOrder.prototype.calculatePrice = function() {
+  //var total = 0;
+  var numberOfToppings = this.toppings.length;
+  return this.totalPrice = (numberOfToppings * (this.size/10)) + this.size;
 };
 
-Pizza.prototype.calculateNumberofToppings = function () {
-  return this.numberOfToppings = this.typesOfToppings.length;
-};
+  // USER INTERFACE LOGIC
+  $(function() {
+   $("form").submit(function(event) {
+   event.preventDefault();
 
-Pizza.prototype.calculatePrice = function (priceOfSize) {
-  return this.totalPrice = (this.numberOfToppings * (priceOfSize/10)) + priceOfSize;
-};
+   var customersName = $("#customersName").val();
+   var phoneNumber = $("#phoneNumber").val();
+   var sizeOfPizza = parseInt($("#sizeOfPizza input[type='radio'][name='pizzaSize']:checked").val());
 
 
-// // USER INTERFACE LOGIC
-// $(function() {
-//
-// //  $("form").submit(function(event) {
-//
-// //  event.preventDefault();
-//
-//   });
-// });
+   var newPizzaOrder = new PizzaOrder(customersName, phoneNumber, sizeOfPizza);
+   //debugger;
+   $('#toppings :checked').each(function() {
+     //alert($(this).val());
+      //this.toppings.push($(this).val());
+      //newPizzaOrder.insertTypeOfTopping($(this).val())
+      newPizzaOrder.toppings.push($(this).val());
+    });
+
+    //newPizzaOrder.calculatePrice();
+    alert(newPizzaOrder.calculatePrice());
+    //console.log(this.newPizzaOrder);
+
+    });
+  });
