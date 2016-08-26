@@ -12,9 +12,9 @@ function CustomerInfo(name, phone) {
 
 Pizza.prototype.pizzaSizeToString = function() {
   var pizzaSize = "";
-  if (Pizza.size === 10) {
+  if (this.size === 10) {
     pizzaSize = "Small Pizza"
-  } else if (Pizza.size === 15) {
+  } else if (this.size === 15) {
     pizzaSize = "Medium Pizza"
   } else {
     pizzaSize = "Large Pizza"
@@ -70,6 +70,7 @@ $(function() {
       $("#orderList").append("<li>" + newPizza.pizzaSizeToString() + ": " + newPizza.listToppings() + " : $"+ newPizza.pizzaPrice +  "</li>");
       $("#orderList").show();
 
+      alert(newPizza.size);
 
   });
 });
