@@ -27,7 +27,18 @@ Pizza.prototype.calculatePizzaPrice = function() {
   return this.pizzaPrice = (numberOfToppings * (this.size/10)) + this.size;
 };
 
-
+Pizza.prototype.listToppings = function() {
+  var toppings = "";
+  if (this.toppings[1] !== undefined){
+    for (var i = 1; i < this.toppings.length; i++) {
+      toppings+=(this.toppings[i] + ", ");
+    }
+  }
+  if (this.toppings[0] !== undefined){
+    toppings+=this.toppings[0];
+  }
+  return toppings;
+};
 
 // PizzaOrder.prototype.calculatePrice = function() {
 //   var numberOfToppings = this.toppings.length;
@@ -56,10 +67,8 @@ $(function() {
       alert("Pizza price: $" + newPizza.calculatePizzaPrice());
 
       $(".customersName").text(newCustomerInfo.name);
-      $("#orderList").append("<li>" + newPizza.pizzaSizeToString() + " : $"+ newPizza.pizzaPrice +  "</li>");
+      $("#orderList").append("<li>" + newPizza.pizzaSizeToString() + ": " + newPizza.listToppings() + " : $"+ newPizza.pizzaPrice +  "</li>");
       $("#orderList").show();
-
-
 
 
   });
