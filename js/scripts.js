@@ -57,7 +57,7 @@ $(function() {
       $(".customersName").text(newCustomerInfo.name);
       $("#orderList").append("<li>" + newPizza.pizzaSizeToString() + ": " + newPizza.listToppings() + " : $"+ newPizza.pizzaPrice +  "</li>");
       $("#checkout").show();
-      $("#customerDetails").hide(); 
+      $("#customerDetails").hide();
    });
    $("#placeOrder").click(function(){
     confirm("Your total is: $" + total);
