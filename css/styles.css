@@ -12,6 +12,6 @@ img {
   margin-top: -20px;
   margin-bottom: 25px;
 }
-#orderList {
-  display:
+#checkout {
+  display: none;
 }
